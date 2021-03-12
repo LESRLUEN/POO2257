@@ -47,13 +47,10 @@ public class ArchivoEmpleado {
         }
     }
     
-    public ArrayList<Empleado> leerEmpleados(){
-        ArrayList<Empleado> tmp=null;
-        
-        // Leer del disco duro
-        try {
-            
-            ObjectInputStream fLectura = new ObjectInputStream(
+public ArrayList<Empleado> leerEmpleados(){
+        ArrayList<Empleado> tmp = null;
+         try {
+             ObjectInputStream fLectura = new ObjectInputStream(
                     new FileInputStream(archivo));
 
             tmp = (ArrayList<Empleado>) fLectura.readObject();
@@ -67,8 +64,9 @@ public class ArchivoEmpleado {
         } catch (Exception ex) {
             System.out.println("Error" + ex.toString());
         }
-        // Se sube al  Arraylist tmp
         
+        // Leer del disco duro
+        // se sube al Arraylist tmp
         return tmp;
     }
 }
